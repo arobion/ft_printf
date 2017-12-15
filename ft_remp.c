@@ -6,7 +6,7 @@
 /*   By: arobion <arobion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/27 21:06:28 by arobion           #+#    #+#             */
-/*   Updated: 2017/12/15 18:18:28 by arobion          ###   ########.fr       */
+/*   Updated: 2017/12/15 19:20:05 by arobion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ void		ft_remp_right_preci2(char *str, t_param param, int i, int j)
 {
 	while (i >= 0 && j < (int)param.width)
 	{
-		str[i--] = ' ';
+		if (str[i] != '-')
+			str[i--] = ' ';
 		param.width--;
 	}
 }
