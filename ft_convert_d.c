@@ -6,7 +6,7 @@
 /*   By: arobion <arobion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 11:07:08 by arobion           #+#    #+#             */
-/*   Updated: 2017/12/15 18:28:43 by arobion          ###   ########.fr       */
+/*   Updated: 2017/12/15 18:57:58 by arobion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char					*ft_flags_d(long long var, t_param param)
 		i++;
 	if (var == 0 && param.precision == 0 && param.width == 0)
 		return (str);
-	if (((ft_is_in(param.flags, '+') || ft_is_in(param.flags, ' ')) && var >= 0) && (param.precision >= (int)param.width || (param.width == 0 && param.precision == -1)))
+	if (((ft_is_in(param.flags, '+') || ft_is_in(param.flags, ' ')) && var >= 0) && (param.precision >= (int)param.width || ((int)param.width <= ft_count_var(var) && param.precision == -1)))
 		i++;
 	if (!(str = malloc(sizeof(int) * i + 1)))
 		return (NULL);
