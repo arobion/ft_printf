@@ -6,7 +6,7 @@
 /*   By: arobion <arobion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/27 21:06:28 by arobion           #+#    #+#             */
-/*   Updated: 2017/12/15 18:05:40 by arobion          ###   ########.fr       */
+/*   Updated: 2017/12/15 18:18:28 by arobion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void		ft_remp_right_bis(char *str, t_param param, long long var)
 			|| param.precision >= ft_count_var(var))
 		ft_remp_right_preci(str, param, var);
 	if (param.precision <= ft_count_var(var) && ft_is_in(param.flags, '0')\
-			&& param.precision >= 0)
+			&& param.precision >= 0 && (ft_is_in(param.flags, '+') == 0))
 		while (str[i] == '0' && str[i] != '\0')
 			str[i++] = ' ';
 	i = 0;
